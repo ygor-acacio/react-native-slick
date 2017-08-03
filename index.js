@@ -1,2 +1,2 @@
-import Swiper from './src/'
-module.exports = Swiper
+import Slick from './src/'
+module.exports = Slick
