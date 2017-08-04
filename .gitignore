@@ -30,8 +30,8 @@ build/Release
 
 # Xcode
 *.xcuserstate
-examples/swiper.xcodeproj/project.xcworkspace/
-examples/swiper.xcodeproj/xcuserdata
+examples/slick.xcodeproj/project.xcworkspace/
+examples/slick.xcodeproj/xcuserdata
 
 # IntelliJ
 .idea/

@@ -1,12 +1,12 @@
 {
-  "name": "react-native-swiper",
+  "name": "react-native-slick",
   "keywords": [
     "react-component",
     "react-native",
     "ios"
   ],
-  "version": "1.5.4",
-  "description": "Swiper component for React Native.",
+  "version": "1.0.1",
+  "description": "Slick component for React Native.",
   "main": "index.js",
   "scripts": {
     "start": "react-native start",
@@ -43,14 +43,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leecade/react-native-swiper.git"
+    "url": "git+https://github.com/ahmed3mar/react-native-slick.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/leecade/react-native-swiper/issues"
+    "url": "https://github.com/ahmed3mar/react-native-slick/issues"
   },
-  "homepage": "https://github.com/leecade/react-native-swiper#readme",
+  "homepage": "https://github.com/ahmed3mar/react-native-slick#readme",
   "devDependencies": {
     "babel-eslint": "^7.1.1",
     "rimraf": "^2.5.4",
@@ -58,5 +58,7 @@
     "standard": "^8.5.0",
     "updtr": "^0.2.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "prop-types": "^15.5.10"
+  }
 }

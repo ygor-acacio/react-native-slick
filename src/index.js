@@ -1,11 +1,14 @@
 /**
- * react-native-swiper
+ * react-native-slick
  * @author leecade<leecade@163.com>
+ * @author @ahmed3mar<ahmed3mar@outlook.com>
  */
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import {
   Text,
   View,
+  ViewPropTypes,
   ScrollView,
   Dimensions,
   TouchableOpacity,
@@ -100,7 +103,7 @@ export default class extends Component {
   static propTypes = {
     horizontal: PropTypes.bool,
     children: PropTypes.node.isRequired,
-    style: View.propTypes.style,
+    style: ViewPropTypes.style,
     pagingEnabled: PropTypes.bool,
     showsHorizontalScrollIndicator: PropTypes.bool,
     showsVerticalScrollIndicator: PropTypes.bool,
@@ -165,7 +168,7 @@ export default class extends Component {
 
   componentWillReceiveProps (nextProps) {
     const sizeChanged = (nextProps.width || width) !== this.state.width ||
-                        (nextProps.height || height) !== this.state.height
+      (nextProps.height || height) !== this.state.height
     if (!nextProps.autoplay && this.autoplayTimer) clearTimeout(this.autoplayTimer)
     this.setState(this.initState(nextProps, sizeChanged))
   }
@@ -239,7 +242,7 @@ export default class extends Component {
     const i = this.state.index + (this.props.loop ? 1 : 0)
     const scrollView = this.refs.scrollView
     this.loopJumpTimer = setTimeout(() => scrollView.setPageWithoutAnimation &&
-      scrollView.setPageWithoutAnimation(i), 50)
+    scrollView.setPageWithoutAnimation(i), 50)
   }
 
   /**
@@ -422,14 +425,14 @@ export default class extends Component {
     let overrides = {}
 
     /*
-    const scrollResponders = [
-      'onMomentumScrollBegin',
-      'onTouchStartCapture',
-      'onTouchStart',
-      'onTouchEnd',
-      'onResponderRelease',
-    ]
-    */
+     const scrollResponders = [
+     'onMomentumScrollBegin',
+     'onTouchStartCapture',
+     'onTouchStart',
+     'onTouchEnd',
+     'onResponderRelease',
+     ]
+     */
 
     for (let prop in props) {
       // if(~scrollResponders.indexOf(prop)
@@ -451,7 +454,7 @@ export default class extends Component {
    * @return {object} react-dom
    */
   renderPagination = () => {
-     // By default, dots only show when `total` >= 2
+    // By default, dots only show when `total` >= 2
     if (this.state.total <= 1) return null
 
     let dots = []
@@ -484,8 +487,8 @@ export default class extends Component {
 
     return (
       <View pointerEvents='none' style={[styles['pagination_' + this.state.dir], this.props.paginationStyle]}>
-        {dots}
-      </View>
+    {dots}
+    </View>
     )
   }
 
@@ -494,9 +497,9 @@ export default class extends Component {
     const title = child && child.props && child.props.title
     return title
       ? (<View style={styles.title}>
-        {this.props.children[this.state.index].props.title}
-      </View>)
-      : null
+    {this.props.children[this.state.index].props.title}
+    </View>)
+    : null
   }
 
   renderNextButton = () => {
@@ -509,10 +512,10 @@ export default class extends Component {
 
     return (
       <TouchableOpacity onPress={() => button !== null && this.scrollBy(1)}>
-        <View>
-          {button}
-        </View>
-      </TouchableOpacity>
+    <View>
+    {button}
+    </View>
+    </TouchableOpacity>
     )
   }
 
@@ -525,22 +528,22 @@ export default class extends Component {
 
     return (
       <TouchableOpacity onPress={() => button !== null && this.scrollBy(-1)}>
-        <View>
-          {button}
-        </View>
-      </TouchableOpacity>
+    <View>
+    {button}
+    </View>
+    </TouchableOpacity>
     )
   }
 
   renderButtons = () => {
     return (
       <View pointerEvents='box-none' style={[styles.buttonWrapper, {
-        width: this.state.width,
+      width: this.state.width,
         height: this.state.height
-      }, this.props.buttonWrapperStyle]}>
-        {this.renderPrevButton()}
-        {this.renderNextButton()}
-      </View>
+    }, this.props.buttonWrapperStyle]}>
+    {this.renderPrevButton()}
+    {this.renderNextButton()}
+    </View>
     )
   }
 
@@ -548,25 +551,25 @@ export default class extends Component {
     if (Platform.OS === 'ios') {
       return (
         <ScrollView ref='scrollView'
-          {...this.props}
-          {...this.scrollViewPropOverrides()}
-          contentContainerStyle={[styles.wrapper, this.props.style]}
-          contentOffset={this.state.offset}
-          onScrollBeginDrag={this.onScrollBegin}
-          onMomentumScrollEnd={this.onScrollEnd}
-          onScrollEndDrag={this.onScrollEndDrag}>
-          {pages}
-        </ScrollView>
-       )
+      {...this.props}
+      {...this.scrollViewPropOverrides()}
+      contentContainerStyle={[styles.wrapper, this.props.style]}
+      contentOffset={this.state.offset}
+      onScrollBeginDrag={this.onScrollBegin}
+      onMomentumScrollEnd={this.onScrollEnd}
+      onScrollEndDrag={this.onScrollEndDrag}>
+      {pages}
+    </ScrollView>
+    )
     }
     return (
       <ViewPagerAndroid ref='scrollView'
-        {...this.props}
-        initialPage={this.props.loop ? this.state.index + 1 : this.state.index}
-        onPageSelected={this.onScrollEnd}
-        style={{flex: 1}}>
-        {pages}
-      </ViewPagerAndroid>
+    {...this.props}
+    initialPage={this.props.loop ? this.state.index + 1 : this.state.index}
+    onPageSelected={this.onScrollEnd}
+    style={{flex: 1}}>
+    {pages}
+    </ViewPagerAndroid>
     )
   }
 
@@ -612,9 +615,9 @@ export default class extends Component {
           } else {
             return (
               <View style={pageStyleLoading} key={`loading-${i}`}>
-                {props.loadMinimalLoader ? props.loadMinimalLoader : <ActivityIndicator />}
-              </View>
-            )
+            {props.loadMinimalLoader ? props.loadMinimalLoader : <ActivityIndicator />}
+          </View>
+          )
           }
         } else {
           return <View style={pageStyle} key={i}>{children[page]}</View>
@@ -626,16 +629,16 @@ export default class extends Component {
 
     return (
       <View style={[styles.container, {
-        width: state.width,
+      width: state.width,
         height: state.height
-      }]}>
-        {this.renderScrollView(pages)}
-        {props.showsPagination && (props.renderPagination
-          ? this.props.renderPagination(state.index, state.total, this)
-          : this.renderPagination())}
-        {this.renderTitle()}
-        {this.props.showsButtons && this.renderButtons()}
-      </View>
-    )
+    }]}>
+    {this.renderScrollView(pages)}
+    {props.showsPagination && (props.renderPagination
+      ? this.props.renderPagination(state.index, state.total, this)
+      : this.renderPagination())}
+    {this.renderTitle()}
+    {this.props.showsButtons && this.renderButtons()}
+  </View>
+  )
   }
 }

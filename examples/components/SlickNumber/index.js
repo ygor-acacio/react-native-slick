@@ -5,7 +5,7 @@ import {
   Image,
   Dimensions
 } from 'react-native'
-import Swiper from 'react-native-swiper'
+import Slick from 'react-native-slick'
 const { width } = Dimensions.get('window')
 
 const styles = {
@@ -51,7 +51,7 @@ export default class extends Component {
   render () {
     return (
       <View>
-        <Swiper style={styles.wrapper} height={240}
+        <Slick style={styles.wrapper} height={240}
           renderPagination={renderPagination}
           paginationStyle={{
             bottom: -23, left: null, right: 10
@@ -68,7 +68,7 @@ export default class extends Component {
           <View style={styles.slide} title={<Text numberOfLines={1}>Learn from Kim K to land that job</Text>}>
             <Image style={styles.image} source={require('./img/4.jpg')} />
           </View>
-        </Swiper>
+        </Slick>
       </View>
     )
   }

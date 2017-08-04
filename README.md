@@ -1,21 +1,21 @@
 <p align="center">
-  <img alt="react-native-swiper" src="http://i.imgur.com/P4cRUgD.png" width="208">
+  <img alt="react-native-slick" src="http://i.imgur.com/P4cRUgD.png" width="208">
 </p>
 
 <p align="center">
-  The best Swiper component for React Native.
+  The best Slick component for React Native.
 </p>
 
 <p align="center">
   <a href="http://standardjs.com/"><img alt="JavaScript Style Guide" src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square"></a>
-  <a href="https://npmjs.org/package/react-native-swiper"><img alt="npm version" src="http://img.shields.io/npm/v/react-native-swiper.svg?style=flat-square"></a>
-  <a href="https://npmjs.org/package/react-native-swiper"><img alt="npm version" src="http://img.shields.io/npm/dm/react-native-swiper.svg?style=flat-square"></a>
-  <a href="https://github.com/leecade/react-native-swiper/pulls?q=is%3Apr+is%3Aclosed"><img alt="PR Stats" src="https://img.shields.io/issuestats/i/github/leecade/react-native-swiper.svg?style=flat-square"></a>
-  <a href="https://github.com/leecade/react-native-swiper/issues?q=is%3Aissue+is%3Aclosed"><img alt="Issue Stats" src="https://img.shields.io/issuestats/p/github/leecade/react-native-swiper.svg?style=flat-square"></a>
-  <a href="https://gitter.im/leecade/react-native-swiper?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"><img alt="Join the chat" src="https://badges.gitter.im/leecade/react-native-swiper.svg"></a>
+  <a href="https://npmjs.org/package/react-native-slick"><img alt="npm version" src="http://img.shields.io/npm/v/react-native-slick.svg?style=flat-square"></a>
+  <a href="https://npmjs.org/package/react-native-slick"><img alt="npm version" src="http://img.shields.io/npm/dm/react-native-slick.svg?style=flat-square"></a>
+  <a href="https://github.com/ahmed3mar/react-native-slick/pulls?q=is%3Apr+is%3Aclosed"><img alt="PR Stats" src="https://img.shields.io/issuestats/i/github/ahmed3mar/react-native-slick.svg?style=flat-square"></a>
+  <a href="https://github.com/ahmed3mar/react-native-slick/issues?q=is%3Aissue+is%3Aclosed"><img alt="Issue Stats" src="https://img.shields.io/issuestats/p/github/ahmed3mar/react-native-slick.svg?style=flat-square"></a>
+  <a href="https://gitter.im/ahmed3mar/react-native-slick?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"><img alt="Join the chat" src="https://badges.gitter.im/ahmed3mar/react-native-slick.svg"></a>
 </p>
 
-# react-native-swiper
+# react-native-slick
 
 ## Roadmap
 
@@ -23,49 +23,41 @@
 
 ## Changelogs
 
-- **[1.5.4]**
-  + Added easily accessible pagination point manipulation: use `dotColor` / `activeDotColor` and `dotStyle` / `activeDotStyle` (thanks [@denizs](https://github.com/denizs))
-  + Added scrollEnabled prop to documentation (thanks [@ibandominguez](https://github.com/ibandominguez))
+- **[v1.0.1]**
+  + [52b7023](https://github.com/leecade/react-native-swiper/pull/483/commits/52b702346b4f43df25e669880c819c4a0c41c13e), [	61a189d](https://github.com/leecade/react-native-swiper/pull/483/commits/61a189dcd7200a7567e79a990d0729f32398785b) Update: using PropTypes from prop-types and Change View.propTypes to ViewPropTypes (@thanks [@ahmed3mar](https://github.com/ahmed3mar)).
+  + [84840b3](https://github.com/leecade/react-native-swiper/pull/485/commits/84840b353d8f98b493a4640bf83e02e3727f6f85) Update README.md - fix links image readme (@thanks [@Eric013](https://github.com/Eric013)).
+  + [react-natie-swiper](https://github.com/leecade/react-native-swiper) Fork original repository and change name to react-native-slick.
 
-- [1.5.3]
-  + Add loadMinimalLoader prop to customize `<ActivityIndicator />` (thanks [@Exilz](https://github.com/Exilz))
-  + Disable autoplay timer when prop changes to false (thanks [@dizlexik](https://github.com/dizlexik))
-  + Special thanks to [@hypatiah](https://github.com/dizlexik) for fixed some grammatical errors in README
-
-- [1.5.2]
-  + Add yarn lock
-  + Fix jitter when quickly swiping back and forth between pages (iOS) (thanks [@nemophrost](https://github.com/nemophrost))
-  + The first webview always reloaded when injecting the rest of the children (thanks [@eosterberg](https://github.com/eosterberg))
 
 > see more: [CHANGELOG.md](CHANGELOG.md)
 
 ## Show Cases
 
-> Try these cases by yourself very easy, Just open `examples/ios/swiper.xcodeproj` in Xcode, then press `Cmd + R`; you may edit `examples/index.ios.js` for switch cases.
+> Try these cases by yourself very easy, Just open `examples/ios/slick.xcodeproj` in Xcode, then press `Cmd + R`; you may edit `examples/index.ios.js` for switch cases.
 
-### [examples/components/Basic](https://github.com/leecade/react-native-swiper/blob/master/examples/components/Basic)
+### [examples/components/Basic](https://github.com/ahmed3mar/react-native-slick/blob/master/examples/components/Basic)
 
-![](http://i.imgur.com/zrsazAG.gif =300x)
+![](http://i.imgur.com/zrsazAG.gif=300x)
 
-### [examples/components/Swiper](https://github.com/leecade/react-native-swiper/blob/master/examples/components/Swiper)
+### [examples/components/Slick](https://github.com/ahmed3mar/react-native-slick/blob/master/examples/components/Slick)
 
-![](http://i.imgur.com/hP3f3oO.gif =300x)
+![](http://i.imgur.com/hP3f3oO.gif=300x)
 
-### [examples/components/SwiperNumber](https://github.com/leecade/react-native-swiper/blob/master/examples/components/SwiperNumber)
+### [examples/components/SlickNumber](https://github.com/ahmed3mar/react-native-slick/blob/master/examples/components/SlickNumber)
 
-![](http://i.imgur.com/0rqESVb.gif =300x)
+![](http://i.imgur.com/0rqESVb.gif=300x)
 
-### [examples/components/Phone](https://github.com/leecade/react-native-swiper/blob/master/examples/components/Phone)
+### [examples/components/Phone](https://github.com/ahmed3mar/react-native-slick/blob/master/examples/components/Phone)
 
-![](http://i.imgur.com/c1BhjZm.gif =300x)
+![](http://i.imgur.com/c1BhjZm.gif=300x)
 
-### [examples/components/LoadMinimal](https://github.com/leecade/react-native-swiper/blob/master/examples/components/LoadMinimal)
+### [examples/components/LoadMinimal](https://github.com/ahmed3mar/react-native-slick/blob/master/examples/components/LoadMinimal)
 
-![](http://i.imgur.com/LAOHbJA.gif =300x)
+![](http://i.imgur.com/LAOHbJA.gif=300x)
 
-### [examples/components/PhotoView](https://github.com/leecade/react-native-swiper/blob/master/examples/components/PhotoView)
+### [examples/components/PhotoView](https://github.com/ahmed3mar/react-native-slick/blob/master/examples/components/PhotoView)
 
-![](http://i.imgur.com/GkIRzjO.gif =300x)
+![](http://i.imgur.com/GkIRzjO.gif=300x)
 
 > with [react-native-photo-view](https://github.com/alwx/react-native-photo-view)
 
@@ -88,7 +80,7 @@
 ### Installation
 
 ```bash
-$ npm i react-native-swiper --save
+$ npm i react-native-slick --save
 ```
 
 ### Basic Usage
@@ -102,10 +94,10 @@ $ npm i react-native -g
 - Initialization of a react-native project
 
 ```bash
-$ react-native init myproject
+$ react-native init AwsomeProject
 ```
 
-- Then, edit `myproject/index.ios.js`, like this:
+- Then, edit `AwsomeProject/index.ios.js`, like this:
 
 ```jsx
 import React, { Component } from 'react';
@@ -116,7 +108,7 @@ import {
   View
 } from 'react-native';
 
-import Swiper from 'react-native-swiper';
+import Slick from 'react-native-slick';
 
 var styles = StyleSheet.create({
   wrapper: {
@@ -146,12 +138,12 @@ var styles = StyleSheet.create({
   }
 })
 
-var swiper = React.createClass({
+var slick = React.createClass({
   render: function() {
     return (
-      <Swiper style={styles.wrapper} showsButtons={true}>
+      <Slick style={styles.wrapper} showsButtons={true}>
         <View style={styles.slide1}>
-          <Text style={styles.text}>Hello Swiper</Text>
+          <Text style={styles.text}>Hello Slick</Text>
         </View>
         <View style={styles.slide2}>
           <Text style={styles.text}>Beautiful</Text>
@@ -159,12 +151,12 @@ var swiper = React.createClass({
         <View style={styles.slide3}>
           <Text style={styles.text}>And simple</Text>
         </View>
-      </Swiper>
+      </Slick>
     )
   }
 })
 
-AppRegistry.registerComponent('myproject', () => swiper);
+AppRegistry.registerComponent('AwsomeProject', () => slick);
 ```
 
 ### Properties
@@ -255,19 +247,19 @@ AppRegistry.registerComponent('myproject', () => swiper);
 | onTouchEnd | `e` / `state` / `context` | `function` | You could hold the touch start for a long time |
 | onResponderRelease | `e` / `state` / `context` | `function` | When lifting up - you could pause forever before * lifting |
 
-> Note: each ScrollResponder be injected with two params: `state` and `context`, you can get `state` and `context`(ref to swiper's `this`) from params, for example:
+> Note: each ScrollResponder be injected with two params: `state` and `context`, you can get `state` and `context`(ref to slick's `this`) from params, for example:
 
 ```jsx
-var swiper = React.createClass({
+var slick = React.createClass({
   _onMomentumScrollEnd: function (e, state, context) {
     console.log(state, context.state)
   },
   render: function() {
     return (
-      <Swiper style={styles.wrapper}
+      <Slick style={styles.wrapper}
       onMomentumScrollEnd ={this._onMomentumScrollEnd}
      ...
-      </Swiper>
+      </Slick>
     )
   }
 })
@@ -296,7 +288,7 @@ $ npm i
 $ react-native run-ios
 ```
 
-> Quick start with [examples](https://github.com/leecade/react-native-swiper/tree/master/examples/).
+> Quick start with [examples](https://github.com/ahmed3mar/react-native-slick/tree/master/examples/).
 
 ### Development
 
@@ -315,9 +307,10 @@ And now that this project follows the [standard](https://github.com/feross/stand
 
 - [@leecade](mailto:leecade@163.com) The main author.
 - [@rajkissu](mailto:rajkissu@gmail.com) The secondary contributor.
+- [@ahmed3mar](mailto:ahmed3mar@outlook.com).
 
 ## Questions
 
-Feel free to [contact me](mailto:leecade@163.com) or [create an issue](https://github.com/leecade/react-native-swiper/issues/new)
+Feel free to [contact me](mailto:ahmed3mar@outlook.com) or [create an issue](https://github.com/ahmed3mar/react-native-slick/issues/new)
 
-> Inspired by [nolimits4web/Swiper](https://github.com/nolimits4web/swiper/) & Design material from [Dribbble](https://dribbble.com/) & made with ♥.
+> Inspired by [nolimits4web/Slick](https://github.com/nolimits4web/swiper/) & Design material from [Dribbble](https://dribbble.com/) & made with ♥.

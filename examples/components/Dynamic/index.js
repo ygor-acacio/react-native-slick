@@ -3,7 +3,7 @@ import {
   Text,
   View
 } from 'react-native'
-import Swiper from 'react-native-swiper'
+import Slick from 'react-native-slick'
 
 const styles = {
   wrapper: {
@@ -46,7 +46,7 @@ export default class extends Component {
   componentDidMount () {
     this.setState({
       items: [
-        { title: 'Hello Swiper', css: styles.slide1 },
+        { title: 'Hello Slick', css: styles.slide1 },
         { title: 'Beautiful', css: styles.slide2 },
         { title: 'And simple', css: styles.slide3 }
       ]
@@ -54,7 +54,7 @@ export default class extends Component {
   }
   render () {
     return (
-      <Swiper showsButtons>
+      <Slick showsButtons>
         {this.state.items.map((item, key) => {
           return (
             <View key={key} style={item.css}>
@@ -62,7 +62,7 @@ export default class extends Component {
             </View>
           )
         })}
-      </Swiper>
+      </Slick>
     )
   }
 }

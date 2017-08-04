@@ -33,5 +33,5 @@ function matchesFile (filename, fileGlob) {
 
 copyAndWatch(
   '../src',
-  'node_modules/react-native-swiper/src'
+  'node_modules/react-native-slick/src'
 )

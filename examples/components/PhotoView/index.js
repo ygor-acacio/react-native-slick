@@ -7,7 +7,7 @@ import {
   TouchableWithoutFeedback,
   Dimensions
 } from 'react-native'
-import Swiper from 'react-native-swiper'
+import Slick from 'react-native-slick'
 import PhotoView from 'react-native-photo-view'
 const { width, height } = Dimensions.get('window')
 
@@ -71,7 +71,7 @@ const renderPagination = (index, total, context) => {
   )
 }
 
-const Viewer = props => <Swiper index={props.index} style={styles.wrapper} renderPagination={renderPagination}>
+const Viewer = props => <Slick index={props.index} style={styles.wrapper} renderPagination={renderPagination}>
   {
     props.imgList.map((item, i) => <View key={i} style={styles.slide}>
       <TouchableWithoutFeedback onPress={e => props.pressHandle()}>
@@ -85,7 +85,7 @@ const Viewer = props => <Swiper index={props.index} style={styles.wrapper} rende
       </TouchableWithoutFeedback>
     </View>)
   }
-</Swiper>
+</Slick>
 
 export default class extends Component {
   constructor (props) {

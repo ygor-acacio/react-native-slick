@@ -5,7 +5,7 @@ import {
   Image,
   Dimensions
 } from 'react-native'
-import Swiper from 'react-native-swiper'
+import Slick from 'react-native-slick'
 const { width } = Dimensions.get('window')
 const loading = require('./img/loading.gif')
 
@@ -76,7 +76,7 @@ export default class extends Component {
   render () {
     return (
       <View>
-        <Swiper loadMinimal loadMinimalSize={1} style={styles.wrapper} height={240} loop={false}>
+        <Slick loadMinimal loadMinimalSize={1} style={styles.wrapper} height={240} loop={false}>
           {
             this.state.imgList.map((item, i) => <Slide
               loadHandle={this.loadHandle}
@@ -85,7 +85,7 @@ export default class extends Component {
               i={i}
               key={i} />)
           }
-        </Swiper>
+        </Slick>
         <View>
           <Text>Current Loaded Images: {this.state.loadQueue}</Text>
         </View>

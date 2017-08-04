@@ -5,7 +5,7 @@ import {
   StatusBar,
   Dimensions
 } from 'react-native'
-import Swiper from 'react-native-swiper'
+import Slick from 'react-native-slick'
 const { width, height } = Dimensions.get('window')
 
 const styles = {
@@ -31,7 +31,7 @@ export default class extends Component {
       <View>
         <StatusBar barStyle='light-content' />
         <Image source={require('./img/bg.jpg')}>
-          <Swiper style={styles.wrapper}
+          <Slick style={styles.wrapper}
             dot={<View style={{backgroundColor: 'rgba(255,255,255,.3)', width: 13, height: 13, borderRadius: 7, marginLeft: 7, marginRight: 7}} />}
             activeDot={<View style={{backgroundColor: '#fff', width: 13, height: 13, borderRadius: 7, marginLeft: 7, marginRight: 7}} />}
             paginationStyle={{
@@ -47,7 +47,7 @@ export default class extends Component {
             <View style={styles.slide}>
               <Image style={styles.image} source={require('./img/3.jpg')} />
             </View>
-          </Swiper>
+          </Slick>
         </Image>
       </View>
     )

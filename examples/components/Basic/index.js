@@ -3,7 +3,7 @@ import {
   Text,
   View
 } from 'react-native'
-import Swiper from 'react-native-swiper'
+import Slick from 'react-native-slick'
 
 var styles = {
   wrapper: {
@@ -33,9 +33,9 @@ var styles = {
   }
 }
 
-export default () => <Swiper style={styles.wrapper} showsButtons>
+export default () => <Slick style={styles.wrapper} showsButtons>
   <View style={styles.slide1}>
-    <Text style={styles.text}>Hello Swiper</Text>
+    <Text style={styles.text}>Hello Slick</Text>
   </View>
   <View style={styles.slide2}>
     <Text style={styles.text}>Beautiful</Text>
@@ -43,4 +43,4 @@ export default () => <Swiper style={styles.wrapper} showsButtons>
   <View style={styles.slide3}>
     <Text style={styles.text}>And simple</Text>
   </View>
-</Swiper>
+</Slick>
