@@ -75,7 +75,7 @@ export default class extends Component {
   }
   render () {
     return (
-      <View>
+      <View style={{flex: 1}}>
         <Slick loadMinimal loadMinimalSize={1} style={styles.wrapper} height={240} loop={false}>
           {
             this.state.imgList.map((item, i) => <Slide
