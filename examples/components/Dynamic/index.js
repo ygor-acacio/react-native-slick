@@ -1,13 +1,8 @@
 import React, { Component } from 'react'
-import {
-  Text,
-  View
-} from 'react-native'
+import { Text, View } from 'react-native'
 import Slick from 'react-native-slick'
 
 const styles = {
-  wrapper: {
-  },
   slide1: {
     flex: 1,
     justifyContent: 'center',
@@ -37,13 +32,13 @@ const styles = {
 }
 
 export default class extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       items: []
     }
   }
-  componentDidMount () {
+  componentDidMount() {
     this.setState({
       items: [
         { title: 'Hello Slick', css: styles.slide1 },
@@ -52,7 +47,7 @@ export default class extends Component {
       ]
     })
   }
-  render () {
+  render() {
     return (
       <Slick showsButtons>
         {this.state.items.map((item, key) => {

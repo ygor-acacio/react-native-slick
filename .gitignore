@@ -39,3 +39,6 @@ examples/slick.xcodeproj/xcuserdata
 # Vim
 *.sw*
 dist/
+
+# yarn
+yarn.lock

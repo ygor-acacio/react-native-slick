@@ -1,8 +1,33 @@
-declare module 'react-native-slick' {
-    import { ViewStyle } from 'react-native'
-    import { Component } from 'react'
+import {
+    ViewStyle,
+    StyleProp,
+    NativeSyntheticEvent,
+    NativeScrollEvent,
+    ScrollViewProps
+} from 'react-native'
+import { Component } from 'react'
 
-    interface SlickProps {
+declare module 'react-native-slick' {
+    interface SlickState {
+        autoplayEnd: false
+        loopJump: false
+        width: number
+        height: number
+        offset: {
+            x: number
+            y: number
+        }
+        total: number
+        index: number
+        dir: 'x' | 'y'
+    }
+
+    interface SlickInternals extends SlickState {
+        isScrolling: boolean
+    }
+
+    interface SlickProps
+        extends Omit<ScrollViewProps, 'onScrollBeginDrag' | 'onMomentumScrollEnd'> {
         // Basic
         // If true, the scroll view's children are arranged horizontally in a row instead of vertically in a column.
         horizontal?: boolean
@@ -15,7 +40,7 @@ declare module 'react-native-slick' {
         // Set to false to disable continuous loop mode.
         autoplay?: boolean
         // Called with the new index when the user swiped
-        onIndexChanged?: any
+        onIndexChanged?: (index: number) => void
 
         // Custom basic style & content
         // Set to true enable auto play mode.
@@ -23,33 +48,39 @@ declare module 'react-native-slick' {
         // If no specify default fullscreen mode by flex: 1.
         height?: number
         // See default style in source.
-        style?: ViewStyle
+        style?: StyleProp<ViewStyle>
+        // Customize the View container.
+        containerStyle?: StyleProp<ViewStyle>
         // Only load current index slide , loadMinimalSize slides before and after.
         loadMinimal?: boolean
         // see loadMinimal
-        loadMinimalSize?: boolean
+        loadMinimalSize?: number
         // Custom loader to display when slides aren't loaded
-        loadMinimalLoader?: boolean
+        loadMinimalLoader?: React.ReactNode
 
         // Pagination
         // Set to true make pagination visible.
         showsPagination?: boolean
         // Custom styles will merge with the default styles.
-        paginationStyle?: ViewStyle
+        paginationStyle?: StyleProp<ViewStyle>
         // Complete control how to render pagination with three params (index, total, context) ref to this.state.index / this.state.total / this, For example: show numbers instead of dots.
-        renderPagination?: (index: number, total: number, slick: Slick) => JSX.Element
+        renderPagination?: (
+            index: number,
+            total: number,
+            slick: Slick
+        ) => React.ReactNode
         // Allow custom the dot element.
-        dot?: any
+        dot?: React.ReactNode
         // Allow custom the active-dot element.
-        activeDot?: any
+        activeDot?: React.ReactNode
         // Allow custom the active-dot element.
-        dotStyle?: ViewStyle
+        dotStyle?: StyleProp<ViewStyle>
         // Allow custom the active-dot element.
         dotColor?: string
         // Allow custom the active-dot element.
         activeDotColor?: string
         // Allow custom the active-dot element.
-        activeDotStyle?: ViewStyle
+        activeDotStyle?: StyleProp<ViewStyle>
 
         // Autoplay
         // Delay between auto play transitions (in second).
@@ -59,17 +90,25 @@ declare module 'react-native-slick' {
 
         // Control buttons
         // Set to true make control buttons visible.
-        buttonWrapperStyle?: any
+        buttonWrapperStyle?: StyleProp<ViewStyle>
         // Allow custom the next button.
-        nextButton?: JSX.Element
+        nextButton?: React.ReactNode
         // Allow custom the prev button.
-        prevButton?: JSX.Element
+        prevButton?: React.ReactNode
 
         // Supported ScrollResponder
         // When animation begins after letting up
-        onScrollBeginDrag?: any
+        onScrollBeginDrag?: (
+            e: NativeSyntheticEvent<NativeScrollEvent>,
+            state: SlickInternals,
+            slick: Slick
+        ) => void
         // Makes no sense why this occurs first during bounce
-        onMomentumScrollEnd?: any
+        onMomentumScrollEnd?: (
+            e: NativeSyntheticEvent<NativeScrollEvent>,
+            state: SlickInternals,
+            slick: Slick
+        ) => void
         // Immediately after onMomentumScrollEnd
         onTouchStartCapture?: any
         // Same, but bubble phase
@@ -101,6 +140,8 @@ declare module 'react-native-slick' {
         scrollEnabled?: boolean
     }
 
-    export default class Slick extends Component<SlickProps, any> {
+    export default class Slick extends Component<SlickProps, SlickState> {
+        scrollBy: (index?: number, animated?: boolean) => void
+        scrollTo: (index: number, animated?: boolean) => void
     }
 }
