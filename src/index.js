@@ -4,7 +4,7 @@
  * @author @ahmed3mar<ahmed3mar@outlook.com>
  */
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import PropTypes, { number } from 'prop-types'
 import {
   Text,
   View,
@@ -147,7 +147,9 @@ export default class extends Component {
     /**
      * Called when the index has changed because the user swiped.
      */
-    onIndexChanged: PropTypes.func
+    onIndexChanged: PropTypes.func,
+    selected: PropTypes.number,
+    setSelected: PropTypes.func
   }
 
   /**
@@ -175,6 +177,8 @@ export default class extends Component {
     autoplayTimeout: 2.5,
     autoplayDirection: true,
     index: 0,
+    selected: 0,
+    setSelected: (selected) => null,
     onIndexChanged: () => null
   }
 
@@ -217,8 +221,10 @@ export default class extends Component {
 
   UNSAFE_componentWillUpdate(nextProps, nextState) {
     // If the index has changed, we notify the parent via the onIndexChanged callback
-    if (this.state.index !== nextState.index)
+    if (this.state.index !== nextState.index) {
+      this.props.setSelected(nextState.index)
       this.props.onIndexChanged(nextState.index)
+    }
   }
 
   componentDidUpdate(prevProps) {
@@ -250,7 +256,7 @@ export default class extends Component {
 
     // Support Optional render page
     initState.children = Array.isArray(props.children)
-      ? props.children.filter(child => child)
+      ? props.children.filter((child) => child)
       : props.children
 
     initState.total = initState.children ? initState.children.length || 1 : 0
@@ -285,7 +291,9 @@ export default class extends Component {
     }
 
     initState.offset[initState.dir] =
-      initState.dir === 'y' ? initState.height * props.index : initState.width * props.index
+      initState.dir === 'y'
+        ? initState.height * props.index
+        : initState.width * props.index
 
     this.internals = {
       ...this.internals,
@@ -299,7 +307,7 @@ export default class extends Component {
     return Object.assign({}, this.state, this.internals)
   }
 
-  onLayout = event => {
+  onLayout = (event) => {
     const { width, height } = event.nativeEvent.layout
     const offset = (this.internals.offset = {})
     const state = { width, height }
@@ -396,7 +404,7 @@ export default class extends Component {
    * Scroll begin handle
    * @param  {object} e native event
    */
-  onScrollBegin = e => {
+  onScrollBegin = (e) => {
     // update scroll state
     this.internals.isScrolling = true
     this.props.onScrollBeginDrag &&
@@ -407,7 +415,7 @@ export default class extends Component {
    * Scroll end handle
    * @param  {object} e native event
    */
-  onScrollEnd = e => {
+  onScrollEnd = (e) => {
     // update scroll state
     this.internals.isScrolling = false
 
@@ -437,7 +445,7 @@ export default class extends Component {
    * Drag end handle
    * @param {object} e native event
    */
-  onScrollEndDrag = e => {
+  onScrollEndDrag = (e) => {
     const { contentOffset } = e.nativeEvent
     const { horizontal } = this.props
     const { children, index } = this.state
@@ -617,7 +625,7 @@ export default class extends Component {
         prop !== 'onScrollBeginDrag'
       ) {
         let originResponder = props[prop]
-        overrides[prop] = e => originResponder(e, this.fullState(), this)
+        overrides[prop] = (e) => originResponder(e, this.fullState(), this)
       }
     }
 
@@ -751,11 +759,11 @@ export default class extends Component {
     )
   }
 
-  refScrollView = view => {
+  refScrollView = (view) => {
     this.scrollView = view
   }
 
-  onPageScrollStateChanged = state => {
+  onPageScrollStateChanged = (state) => {
     switch (state) {
       case 'dragging':
         return this.onScrollBegin()
@@ -766,7 +774,7 @@ export default class extends Component {
     }
   }
 
-  renderScrollView = pages => {
+  renderScrollView = (pages) => {
     return (
       <ScrollView
         ref={this.refScrollView}
